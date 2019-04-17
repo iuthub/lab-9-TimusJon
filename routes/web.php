@@ -25,7 +25,7 @@ Route::get('about', function () {
     return view('other.about');
 })->name('other.about');
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin'], function () {
     Route::get('', [
         'uses' => 'PostController@getAdminIndex',
         'as' => 'admin.index'
@@ -49,5 +49,15 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('edit', [
         'uses' => 'PostController@postAdminUpdate',
         'as' => 'admin.update'
+    ]);
+
+    Route::get('delete/{id}', [
+        'uses' => 'PostController@getAdminDelete',
+        'as' => 'admin.delete'
+    ]);
+
+    Route::get('like/{id}', [
+        'uses' => 'PostController@getLikePost',
+        'as' => 'blog.post.like'
     ]);
 });

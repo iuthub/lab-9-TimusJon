@@ -64,6 +64,10 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            // 'modes' => [
+            //     'ONLY_FULL_GROUP_BY',
+            //     'NO_ENGINE_SUBSTITUTION',
+            // ],
         ],
 
         'pgsql' => [
